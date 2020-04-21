@@ -9,6 +9,14 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
+
+router.beforeEach((to, from, next) => {
+  console.log(to,from)
+  if(to.path == '/hello'){
+    return
+  }
+  next()
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

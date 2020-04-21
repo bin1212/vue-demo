@@ -1,5 +1,5 @@
 <template>
-    <div>login</div>
+    <div v-on:click="goHello">login</div>
 </template>
 
 <script>
@@ -9,6 +9,11 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       sad: true
+    }
+  },
+  methods:{
+    goHello(){
+      this.$router.push('/hello')
     }
   }
 }
