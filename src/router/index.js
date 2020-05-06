@@ -16,7 +16,8 @@ export default new Router({
     {
       path: '/hello',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
+      meta:{code:0,requiresAuth:true}
     }
   ]
 })
