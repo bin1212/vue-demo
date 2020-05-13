@@ -16,6 +16,9 @@ export default {
   data () {
     return {
     }
+  },
+  created(){
+    console.log(this.$router)
   }
 }
 </script>

@@ -1,8 +1,14 @@
 <template>
-    <div v-on:click="goHello">login</div>
+<div>
+  <div v-on:click="goHello">login</div>
+  <p @click="asyncAddNum(1)">增加</p>
+  <p>{{getNum}}</p>
+</div>
+    
 </template>
 
 <script>
+import {mapState,mapGetters,mapActions} from 'vuex'
 export default {
   name: 'Login',
   data () {
@@ -14,7 +20,18 @@ export default {
   methods:{
     goHello(){
       this.$router.push('/hello')
-    }
+    },
+    ...mapActions([
+      'asyncAddNum'
+    ])
+  },
+  computed: {
+    ...mapGetters([
+      'getNum'
+    ])
+  },
+  created(){
+    console.log(this,...mapGetters([]))
   }
 }
 </script>
