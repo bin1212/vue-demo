@@ -13,30 +13,41 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Login',
+      name: '登录',
+      hidden:true,
       component: Login
     },
     {
       path: '/hello',
       name: 'HelloWorld',
+      hidden:true,
       component: HelloWorld,
-      meta:{code:0,requiresAuth:true}
+      meta:{code:0,requiresAuth:true},
     },
     {
       path: '/PageA',
-      name: 'PageA',
+      name: '页面A',
       component: PageA,
-      meta:{code:1,requiresAuth:true}
+      meta:{code:1,requiresAuth:true},
+      children:[
+        {
+          path: '/PageB',
+          name: '页面A/页面B',
+          component: PageB,
+          meta:{code:10,requiresAuth:false}
+        }
+      ]
     },
     {
       path: '/PageB',
-      name: 'PageB',
+      name: '页面B',
       component: PageB,
       meta:{code:2,requiresAuth:true}
     },
     {
       path: '/404',
       name: '404',
+      hidden:true,
       component: notFound,
     },
   ]

@@ -6,13 +6,13 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import {initPage} from './untils/authControl'
 
-const initPage = ['/PageA','/PageB']
+
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
-  console.log(to)
   if(!to.matched.length){
     next({
       path: '/404',
